@@ -24,9 +24,10 @@ public:
     string toString()
     {
         string result = "[" + to_string(r) + ", " + to_string(c) + "] with keys [";
-        for (const char &key : keys)
+        for (const auto &key : keys)
         {
-            result += key + ", ";
+            result.push_back(key);
+            result.append(", ");
         }
         return result + "]";
     }
@@ -78,7 +79,7 @@ Node *findShortestPath(vector<string> &map, Node start)
                 continue;
             q.push(next);
             visited.insert(*next);
-            // cout << "Next: " << next->toString() << "\t" << lttr << endl;
+            cout << "Next: " << next->toString() << "\t" << lttr << endl;
         }
     }
     return NULL;
