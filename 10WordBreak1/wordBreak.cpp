@@ -23,6 +23,7 @@ bool wordBreak(vector<string> &dict, string s)
             if (vb[j] == true && set.find(s.substr(j + 1, len)) != set.end())
             {
                 vb[i] = true;
+                break;
             }
         }
     }

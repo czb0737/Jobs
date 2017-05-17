@@ -25,10 +25,7 @@ string getCharOrder(vector<string> &v)
             }
         }
     }
-
-    for (const auto &p : mps)
-        cout << p.first << " " << p.second.first << " " << p.second.second.size() << endl;
-
+    
     queue<char> q;
     string result("");
 
@@ -49,7 +46,6 @@ string getCharOrder(vector<string> &v)
             --num_edge;
         }
     }
-    cout << num_edge << endl;
     return result;
 }
 

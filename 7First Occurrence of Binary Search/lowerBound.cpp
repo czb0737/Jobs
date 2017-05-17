@@ -21,7 +21,7 @@ int lowerBound(vector<int> &v, int num)
 int main()
 {
     vector<int> v = {1,2,3,5,5,6};
-    int r1 = lowerBound(v, 7);
-    int r2 = (int) (lower_bound(v.begin(), v.end(), 7) - v.begin());
+    int r1 = lowerBound(v, 3);
+    int r2 = (int) (lower_bound(v.begin(), v.end(), 3) - v.begin());
     cout << r1 << " " << r2 << endl;
 }
