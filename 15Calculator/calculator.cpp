@@ -94,9 +94,68 @@ int calculator(string s)
     return n_st2.top();
 }
 
+int calculate(string s)
+{
+    stack<int> stk;
+    char sign = '+';
+    int num = 0;
+    
+    for(int i = 0; i <= s.length(); ++i)
+    {
+        char c = i == s.length() ? ' ' : s[i];
+        if (i == s.length() || c == '+' || c == '-' || c == '*' || c == '/')
+        {
+            int tmp = 0;
+            switch(sign)
+            {
+                case '+':
+                    stk.push(num);
+                    break;
+                case '-':
+                    stk.push(-num);
+                    break;
+                case '*':
+                    tmp = stk.top();
+                    stk.pop();
+                    stk.push(tmp * num);
+                    break;
+                case '/':
+                    tmp = stk.top();
+                    stk.pop();
+                    stk.push(tmp / num);
+                    break;
+            }
+            sign = c;
+            num = 0;
+        }
+        else if (isdigit(c))
+            num = num * 10 + c - '0';
+        else if (c == '(')
+        {
+            int idx = i + 1, remain = 1;
+            while (remain > 0)
+            {
+                if (s[idx] == '(')    ++remain;
+                else if (s[idx] == ')')   --remain;
+                ++idx;
+            }
+            num = calculate(s.substr(i + 1, idx - i - 2));
+            i = idx - 1;
+        }
+    }
+    int result = 0;
+    while (!stk.empty())
+    {
+        result += stk.top();
+        stk.pop();
+    }
+    return result;
+}
+
 int main(int args, char *argv[])
 {
-    string s(argv[1]);
-    // string s("6*(10-(3+2))");
-    cout << s << "=" << calculator(s) << endl;
+    // string s(argv[1]);
+    // cout << s << endl;
+    string s("(3+2)*(3+2)");
+    cout << s << "=" << calculate(s) << endl;
 }
