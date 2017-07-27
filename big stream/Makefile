@@ -1,13 +1,10 @@
 CC=g++
 FLAG=-Wall -std=c++14
 
-multikeyHash: main.o multikeyHash.o
-	$(CC) $(FLAG) -o multikeyHash multikeyHash.o main.o
+multikeyHash: main.o
+	$(CC) $(FLAG) -o multikeyHash main.o
 
-multikeyHash.o: multikeyHash.hpp toBytes.hpp
-	$(CC) $(FLAG) -c multikeyHash.hpp
-
-main.o: main.cpp multikeyHash.o
+main.o: main.cpp multikeyHash.hpp
 	$(CC) $(FLAG) -c main.cpp
 
 .PHONY:
