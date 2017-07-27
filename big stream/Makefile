@@ -14,4 +14,4 @@ main.o: main.cpp multikeyHash.o
 	clean
 
 clean:
-	-rm *.o
+	-rm *.o *.gch
