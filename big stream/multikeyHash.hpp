@@ -1,12 +1,9 @@
 #ifndef _MULTIKEY_HASH_
 #define _MULTIKEY_HASH_
 
-#include <iostream>
 #include <tuple>
 #include <vector>
 #include "toBytes.cpp"
-
-// using namespace std;
 
 typedef unsigned char byte;
 typedef uint32_t int32;
@@ -26,6 +23,7 @@ public:
     }
 
 private:
+    // Murmur3 hash function
     int32 murmur3Hash(const vector<byte> &v, int32 seed)
     {
         int32 h = seed;
@@ -69,6 +67,7 @@ private:
         return h;
     }
 
+    // Template traversal each element in the tuple
     template <class Tpl, size_t N>
     struct TraversalTuple
     {
@@ -81,6 +80,7 @@ private:
         }
     };
 
+    // Specialized template traversal function
     template <class Tpl>
     struct TraversalTuple<Tpl, 1>
     {

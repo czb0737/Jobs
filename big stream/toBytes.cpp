@@ -1,7 +1,6 @@
 #ifndef _TO_BYTES_
 #define _TO_BYTES_
 
-#include <iostream>
 #include <vector>
 #include <cstring>
 #include <string>

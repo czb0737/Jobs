@@ -6,6 +6,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+    // Lambda function to get tuple
     auto func = [](const auto & ... tp) { return make_tuple(tp...); };
 
     // First test
