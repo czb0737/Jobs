@@ -33,8 +33,8 @@ string fracAdd(string &s)
     }
     d.push_back(num);
 
-    pair<long, long> p = make_pair(n[0], d[0]);
-    for (int i = 1; i < n.size(); ++i)
+    pair<long, long> p = make_pair(0, 1);
+    for (int i = 0; i < n.size(); ++i)
         add(p, n[i], d[i]);
 
     return to_string(p.first) + "/" + to_string(p.second);
