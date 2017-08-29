@@ -1,0 +1,4 @@
+{{var1}} is good. {{var3}} {{var4}}, and {{var5}} are awesome.
+test escaped braces: {{lb}}{{lb}}var3}}
+vars{{var6}}workswithoutspaces.
+Hello again {{var2}} and {{var1}}. {{var8}}
