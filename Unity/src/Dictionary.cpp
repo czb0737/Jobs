@@ -5,16 +5,22 @@
 	> Created Time: 08/29/2017 Tue 12:36:01
  ************************************************************************/
 
-#include "Dictionary.h"
+#include "../include/Dictionary.h"
 
+/*
+ * Constructor of class Dictionary
+ */
 Dictionary::Dictionary()
 {
     // this->buildDict(file_name);
 }
 
+/*
+ * Build dictionary using params.txt
+ */
 void Dictionary::buildDict(string file_name)
 {
-    // Key-value pair from input.txt
+    // Key-value pair from params.txt
     unordered_map<string, string> &umap = this->dict;
     // Adjacent table for dictionary <from node, <in degree, to nodes>>
     unordered_map<string, pair<int, vector<string>>> adj;
@@ -45,7 +51,7 @@ void Dictionary::buildDict(string file_name)
             }
             if (!valid(s, idx + 2, r_idx, true))
             {
-                idx = r_idx + 2;
+                idx += 2;
                 continue;
             }
             string tmp_s = s.substr(idx + 2, r_idx - idx - 2);
@@ -63,6 +69,7 @@ void Dictionary::buildDict(string file_name)
     int num_edge = 0;
     for (auto &p : adj)
     {
+        // Find all node whose indegree is 0
         if (p.second.first == 0)
         {
             q.push(p.first);
@@ -109,7 +116,6 @@ void Dictionary::buildDict(string file_name)
 
 /*
  * Replace a specific substring to another string.
- * Return a new string after replacement.
  */
 void Dictionary::replaceAll(string &s, string replace_from, string replace_to)
 {
@@ -149,6 +155,9 @@ bool Dictionary::valid(string &s, int start, int end, bool lb = true)
     return true;
 }
 
+/*
+ * Split a string into two parts according to character 'sep'
+ */
 pair<string, string> Dictionary::split(string &s, char sep = ':')
 {
     int idx = s.find_first_of(':');
@@ -160,6 +169,9 @@ pair<string, string> Dictionary::split(string &s, char sep = ':')
     return make_pair(s.substr(0, idx), s.substr(idx + 1));
 }
 
+/*
+ * Replace strings that are in the dictionary
+ */
 string Dictionary::replace(string &s)
 {
     stringstream ss;
@@ -173,7 +185,7 @@ string Dictionary::replace(string &s)
         }
         if (!valid(s, idx + 2, r_idx, false))
         {
-            idx = r_idx + 2;
+            idx += 2;
             continue;
         }
         string tmp_s = s.substr(idx + 2, r_idx - idx - 2);
@@ -187,10 +199,4 @@ string Dictionary::replace(string &s)
     }
     ss << s.substr(s_idx, s.size() - s_idx);
     return ss.str();
-}
-
-void Dictionary::displayDict()
-{
-    for (auto &p : this->dict)
-        cout << p.first << "\t" << p.second << endl;
 }

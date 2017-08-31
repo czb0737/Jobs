@@ -1,0 +1,4 @@
+{{var1}} will be translate.
+But unknown variable will not:
+{{var4}} will not.
+And {{var2}} will not. 

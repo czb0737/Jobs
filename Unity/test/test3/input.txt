@@ -1,0 +1,2 @@
+{{lb}}{{lb}}var1}} can only be translated once.
+{{var2}} works good.

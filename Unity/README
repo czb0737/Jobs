@@ -1,0 +1,41 @@
+To compile and run:
+	./strt <input.txt> <params.txt>
+
+The code structure of this project:
+./
+ |--- src
+ |     |--- strt.cpp
+ |     |--- Dictionary.cpp
+ |--- include
+       |--- Dictionary.h
+
+To complie: 
+	make
+
+To clean:
+	make clean
+
+Test cases:
+
+Original test: (./input.txt, ./params.txt)
+
+Test 1: (test/test1/input.txt, test/test1/params.txt)
+    Unknown variable will be translated.
+
+Test 2: (test/test2/input.txt, test/test2/params.txt)
+    Both the string in input.txt and params.txt can be translated only once.
+
+Test 3: (test/test3/input.txt, test/test3/params.txt)
+    {{lb}}{{lb}}var1}} can only be translated once
+
+Test 4: (test/test4/input.txt, test/test4/params.txt)
+    Illegal format of params.txt where key is empty.
+
+Test 5: (test/test5/input.txt, test/test5/params.txt)
+    Illegal format of params.txt where value is empty.
+
+Test 6: (test/test6/input.txt, test/test6/params.txt)
+    {{illegal variable name}} will not be translated.
+
+Test 7: (test/test7/input.txt, test/test7/params.txt)
+    Exit if there is circular reference in params.txt.

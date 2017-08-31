@@ -1,0 +1,2 @@
+{{illegal variable name}} will not be translated.
+So do {{}} and {{var1}}.

@@ -20,18 +20,22 @@ using namespace std;
 class Dictionary
 {
 private:
-
+	// Dictionary set up by params.txt
 	unordered_map<string, string> dict;
 
+	// Split a string into two parts according to character 'sep'
 	pair<string, string> split(string &s, char sep);
+	// Find out if a string can match regular expression "\w+"
 	bool valid(string &s, int start, int end, bool lb);
+	// Replace a specific substring to another string.
 	void replaceAll(string &s, string replace_from, string replace_to);
 
 public:
-
+	// Constructor of class Dictionary
 	Dictionary();
+	// Build dictionary using params.txt
 	void buildDict(string file_name);
-	void displayDict();
+	// Replace strings that are in the dictionary
 	string replace(string &s);
 };
 
