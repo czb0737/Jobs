@@ -26,6 +26,9 @@ void hackingTime(string &text)
     string enc = text.substr(index + 1);
     string dec = "Your friend, Alice";
     vector<int> key = findKey(enc, dec, count);
+    for (auto &i : key)
+        cout << i << " ";
+    cout << endl;
     int key_idx = 0, key_size = key.size();
     for (int i = 0; i < text.size(); ++i)
     {

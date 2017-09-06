@@ -3,6 +3,10 @@
         "array": "cpp",
         "initializer_list": "cpp",
         "ostream": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "*.tcc": "cpp",
+        "iostream": "cpp",
+        "unordered_map": "cpp",
+        "tuple": "cpp"
     }
 }

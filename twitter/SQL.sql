@@ -15,9 +15,9 @@ AND (SELECT COUNT(PID) FROM insurance AS i3 WHERE i1.TIV_2015=i3.TIV_2015) > 1;
 #3: Tree, root, leaf, inner node Leetcode 608
 
 SELECT t.id AS Id,(
-CASE
-WHEN t.p_id IS NULL THEN 'Root'
-WHEN t.id IN (SELECT p_id FROM tree) THEN 'Inner'
-ELSE 'Leaf' END
+    CASE
+    WHEN t.p_id IS NULL THEN 'Root'
+    WHEN t.id IN (SELECT p_id FROM tree) THEN 'Inner'
+    ELSE 'Leaf' END
 ) AS Type
 FROM tree AS t;
