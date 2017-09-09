@@ -1,0 +1,19 @@
+1. inoder traverse BST
+2. merge two BST
+3. Map Reduce的题。可以准备下Map Reduce的框架。 
+4. combination sum (Big data, hash table)
+5. 给你很多string IDs，然后用hadoop，mapreduce给这些string IDs assign long int numerical IDs。
+6. 就是那个0,1 matrix，找出矩阵中最大的row sum。地里有这个题的面经，然后再O(n)解决。
+7. Rotate Array
+8. 
+输入："priistiistoomdd"
+输出：i, i, o, d
+
+输入："priiistiistoomdd"
+输出：i
+9. Largest Number
+10. 第二题是SQL题 给我一个Saleman_Info table和Order table， 求Name of salesperson that has more than 1 order 非常简单
+11. hashmap实现过程中的各种问题
+12. intersection of two linkedlist
+13. Find K Closest Elements
+14. 
