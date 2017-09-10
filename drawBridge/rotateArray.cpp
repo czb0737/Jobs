@@ -2,7 +2,7 @@
 	> File Name: maxRowSum.cpp
 	> Author: czb
 	> Mail: zhibinc.cs@gmail.com
-	> Created Time: 09/10/2017 Sun 11:53:41
+	> Created Time: 09/10/2017 Sun 13:30:42
  ************************************************************************/
 
 #include <iostream>
