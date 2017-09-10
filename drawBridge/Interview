@@ -3,7 +3,7 @@
 3. Map Reduce的题。可以准备下Map Reduce的框架。 
 4. combination sum (Big data, hash table)
 5. 给你很多string IDs，然后用hadoop，mapreduce给这些string IDs assign long int numerical IDs。
-6. 就是那个0,1 matrix，找出矩阵中最大的row sum。地里有这个题的面经，然后再O(n)解决。
+6. 就是那个0,1 matrix, 每行都是排好序的，找出矩阵中最大的row sum。地里有这个题的面经，然后再O(n)解决。
 7. Rotate Array
 8. 
 输入："priistiistoomdd"
