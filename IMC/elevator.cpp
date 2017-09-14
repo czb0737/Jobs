@@ -20,7 +20,7 @@ int elevator(vector<int> &weight, vector<int> &floor, int num_limit, int weight_
 
 int elevator(vector<int> &weight, vector<int> &floor, int num_limit, int weight_limit)
 {
-    int result = 0;
+    int result = 1;
     unordered_set<int> uset;
     int nl = num_limit, wl = weight_limit;
 
@@ -28,7 +28,7 @@ int elevator(vector<int> &weight, vector<int> &floor, int num_limit, int weight_
     {
         if (--nl < 0 || wl - weight[i] < 0)
         {
-            result += uset.size();
+            result += uset.size() + 1;
             uset.clear();
             wl = weight_limit - weight[i];
             nl = num_limit - 1;

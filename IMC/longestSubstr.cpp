@@ -34,7 +34,8 @@ int longestSubstr(string &s)
         else if (ch >= 'A' && ch <= 'Z')
             upper = true;
     }
-    return max(result, (int)s.size() - num_idx - 1);
+    result = max(result, upper ? (int)S.size() - num_idx - 1 : 0);
+    return result == 0 ? -1 : result;
 }
 
 int main(int argc, char **argv)
