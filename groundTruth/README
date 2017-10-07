@@ -1,0 +1,18 @@
+In this project, we assume that all words in the input should consist of only lower case letters.
+
+To compile:
+    make
+
+To run:
+    ./main
+
+To clean the compiled file:
+    make clean
+
+The code structure of this project:
+./
+ |--- src
+ |     |--- main.cpp
+ |     |--- PhoneKeypadAlias.cpp
+ |--- include
+       |--- PhoneKeypadAlias.h

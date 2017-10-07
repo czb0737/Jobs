@@ -18,10 +18,11 @@ int lowerBound(vector<int> &v, int num)
     return low;
 }
 
-int main()
+int main(int argc, char **argv)
 {
     vector<int> v = {1,2,3,5,5,6};
-    int r1 = lowerBound(v, 7);
-    int r2 = (int) (lower_bound(v.begin(), v.end(), 7) - v.begin());
+    int target = stoi(string(argv[1]));
+    int r1 = lowerBound(v, target);
+    int r2 = (int) (lower_bound(v.begin(), v.end(), target) - v.begin());
     cout << r1 << " " << r2 << endl;
 }
